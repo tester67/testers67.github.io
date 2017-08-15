@@ -5,10 +5,26 @@
   <title>Экспорт в xml</title>
   <script>
   function isExport() {
+    download('test.xml');
+  }
+
+  function download(filename) {
     var nameInput = document.getElementById("name").value;
     var surnameInput = document.getElementById("surname").value;
     var agenameInput = document.getElementById("age").value;
-    var genderSelect = document.getElementById("select_id").value
+    var genderSelect = document.getElementById("select_id").value;
+    var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(nameInput));
+    pom.setAttribute('download', filename);
+
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
+    }
+    else {
+        pom.click();
+    }
   }
   </script>
  </head> 
