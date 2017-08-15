@@ -14,26 +14,22 @@
     var ageInput = document.getElementById("age").value;
     var genderSelect = document.getElementById("select_id").value;
     var pom = document.createElement('a');
-///////
     
-    // var xmlDoc = "<root><name></name></root>";
+    var encode = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+    var root_el = "<root>";
+    var root_el2 = "</root>";
+    var name_el = "<name>";
+    var name_el2 = "</name>";
+    var surname_el = "<surname>";
+    var surname_el2 = "</surname>";
+    var age_el = "<age>";
+    var age_el2 = "</age>";
+    var gender_el = "<gender>";
+    var gender_el2 = "</gender>";
 
-    // //создаем узел верхнего уровня
-    // var rootNode;
-    // rootNode = xmlDoc.createElement("ROOT");
-    // xmlDoc.documentElement = rootNode;
+    var xmlDoc = encode + root_el + name_el + nameInput + name_el2 + surname_el + surnameInput + surname_el2 + age_el + ageInput + age_el2 + gender_el + genderSelect + gender_el2 + root_el2;
 
-    // //создаем два узла второго уровня и добавляем к дереву
-    // var element1 = xmlDoc.createElement("ELEMENT1");
-    // rootNode.appendChild(element1);
-
-    // var element2 = xmlDoc.createElement("ELEMENT2");
-    // rootNode.appendChild(element2);
-
-
-
-///////
-    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(nameInput));
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(xmlDoc));
     pom.setAttribute('download', filename);
 
     if (document.createEvent) {
