@@ -14,23 +14,26 @@
     var ageInput = document.getElementById("age").value;
     var genderSelect = document.getElementById("select_id").value;
     var pom = document.createElement('a');
-
-    //создаем объект XMLDOMDocument    
-    var xmlDoc = new ActiveXObject("Msxml2.DOMDocument");
-
-    //создаем узел верхнего уровня
-    var rootNode;
-    rootNode = xmlDoc.createElement("ROOT");
-    xmlDoc.documentElement = rootNode;
-
-    //создаем два узла второго уровня и добавляем к дереву
-    var element1 = xmlDoc.createElement("ELEMENT1");
-    rootNode.appendChild(element1);
-
-    var element2 = xmlDoc.createElement("ELEMENT2");
-    rootNode.appendChild(element2);
+///////
     
-    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(xmlDoc));
+    // var xmlDoc = "<root><name></name></root>";
+
+    // //создаем узел верхнего уровня
+    // var rootNode;
+    // rootNode = xmlDoc.createElement("ROOT");
+    // xmlDoc.documentElement = rootNode;
+
+    // //создаем два узла второго уровня и добавляем к дереву
+    // var element1 = xmlDoc.createElement("ELEMENT1");
+    // rootNode.appendChild(element1);
+
+    // var element2 = xmlDoc.createElement("ELEMENT2");
+    // rootNode.appendChild(element2);
+
+
+
+///////
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(nameInput));
     pom.setAttribute('download', filename);
 
     if (document.createEvent) {
