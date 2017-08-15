@@ -2,26 +2,43 @@
 <html>
  <head>
   <meta charset="utf-8">
-  <title>Событие onclick</title>
+  <title>Экспорт в xml</title>
   <script>
-   function isEmail() {
-    var str = document.getElementById("email").value;
-    var status = document.getElementById("status");
-    var re = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
-    if (re.test(str)) status.innerHTML = "Адрес правильный";
-      else status.innerHTML = "Адрес неверный";
-    if(isEmpty(str)) status.innerHTML = "Поле пустое";
-   }
-   function isEmpty(str){
-    return (str == null) || (str.length == 0);
-   }
+  function isExport() {
+    var nameInput = document.getElementById("name").value;
+    var surnameInput = document.getElementById("surname").value;
+    var agenameInput = document.getElementById("age").value;
+    var genderSelect = document.getElementById("select_id").value
+  }
   </script>
  </head> 
  <body>
-  <form action="">
-   <p>Введите адрес электронной почты и нажмите кнопку &laquo;Проверить&raquo;</p>
-   <p><input type="text" id="email"> <span id="status"></span></p>
-   <p><input type="button" value="Проверить" onclick="isEmail()"></p>
-  </form>
+  <table width="100" align="center">
+    <tbody>
+      <p align="center">Введите Имя, Фамилия, Возраст и выберете Пол, нажмите кнопку &laquo;Экспортировать в xml&raquo;</p>
+      <tr>
+        <td width="50"><label>Имя</label></td>
+        <td width="50"><input type="text" id="name"></td>
+      </tr>
+      <tr>
+        <td width="50"><label align="center">Фамилия</label></td>
+        <td width="50"><input type="text" id="surname"></td>
+      </tr>
+      <tr>
+        <td width="50"><label align="center">Пол</label></td>
+        <td width="50">
+          <select name="gender" id="select_id">
+            <option>Мужской</option>
+            <option>Женский</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td width="50"><label align="center">Возраст</label></td>
+        <td width="50"><input type="text" id="age"></td>
+      </tr>  
+    </tbody> 
+  </table>
+  <p align="center"><input type="button" value="Экспортировать в xml" onclick="isExport()"></p>
  </body>
 </html>
